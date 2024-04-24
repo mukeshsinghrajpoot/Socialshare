@@ -1,0 +1,29 @@
+
+<?php if ($block->btenable()): ?>
+     <div class="a2a_kit a2a_kit_size_<?= /* @noEscape */ $block->size(); ?>
+      a2a_floating_style 
+      a2a_<?= /* @noEscape */ $block->postion(); ?>_style
+      a2a_<?= /* @noEscape */ $block->postion();?>"
+       data-a2a-icon-color="<?php /* @noEscape */ if ($block->defaultenable()=='0') {
+            echo $block->backgroundcolor().','.$block->iconcolor();} ?>">    
+     <?php $socialicons=$block->multishareicons();
+        foreach ($socialicons as $socialicon) { ?>
+    <a class="a2a_button_<?= /* @noEscape */$socialicon; ?>"></a>
+        <?php } ?>
+    <?php if ($block->moreicons()): ?>        
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <?php endif; ?>
+</div>
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "Bluethinkinc_Socialshare/js/page": {
+        }
+    }
+    }
+</script>
+<style type="text/css">
+    .a2a_vertical{left:0px; top:190px;}
+    .a2a_default{bottom:0px; right:0px;}
+</style>
+<?php endif; ?>

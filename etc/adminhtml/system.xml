@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bluethink" translate="label" sortOrder="20">
+            <label>BlueThink Inc</label>
+        </tab>
+        <section id="bluethink_admin_socialshare" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Admin Social Share Setting</label>
+            <tab>bluethink</tab>
+            <resource>Bluethinkinc_Socialshare::bluethink_admin_socialshare</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="shareicons" translate="Shareicons" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <label>Share Icons</label>
+                <source_model>Bluethinkinc\Socialshare\Model\Config\Source\SocialOption</source_model>
+                </field>
+                <field id="moreoptionsocial" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>More Option Social Share Icon</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="allpages" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>All Pages Configuration</label>
+                <field id="defaultenable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>All Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                 <field id="cmsenable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cms Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                   <field id="defaultenable">0</field>
+                  </depends>
+                </field>
+                 <field id="plpenable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Product List Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                   <field id="defaultenable">0</field>
+                  </depends>
+                </field>
+                <field id="pdpenable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Product Detail Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                   <field id="defaultenable">0</field>
+                  </depends>
+                </field>
+                <field id="contactenable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Contact us</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                   <field id="defaultenable">0</field>
+                  </depends>
+                </field>
+            </group>
+            <group id="style" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Button and Postion </label>
+                <field id="postion" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Position</label>
+                    <source_model>Bluethinkinc\Socialshare\Model\Config\Source\PositionOption</source_model>
+                </field>
+                <field id="size" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Button Size</label>
+                    <source_model>Bluethinkinc\Socialshare\Model\Config\Source\SizeOption</source_model>
+                </field>
+                <field id="defaultsetting" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Defult setting</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If Defult setting is no then you can change the background color  of the social icon as well as color of the social icon.</comment>
+                </field>
+                <field id="bccolor" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Background Color</label>
+                    <validate>jscolor {hash:true,refine:true}</validate> 
+                    <depends>
+                   <field id="defaultsetting">0</field>
+                  </depends>
+                </field>
+                <field id="iconcolor" translate="label comment" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Social Icon Color</label>
+                    <validate>jscolor {hash:true,refine:true}</validate> 
+                    <depends>
+                   <field id="defaultsetting">0</field>
+                  </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

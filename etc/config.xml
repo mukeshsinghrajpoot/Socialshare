@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <bluethink_admin_socialshare>
+            <general>
+                <shareicons>facebook,twitter,linkedin,whatsapp,skype</shareicons>
+                <moreoptionsocial>0</moreoptionsocial>
+            </general>
+            <allpages>
+                <defaultenable>1</defaultenable>
+            </allpages>
+            <style>
+                <postion>vertical</postion>
+                <size>32</size>
+                <defaultsetting>1</defaultsetting>
+                <bccolor>#ff1493</bccolor>
+                <iconcolor>#FFFFFF</iconcolor>
+            </style>
+        </bluethink_admin_socialshare>    
+    </default>
+</config>
